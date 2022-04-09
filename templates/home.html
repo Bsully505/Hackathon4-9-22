@@ -14,7 +14,7 @@
         <button id = "Update" onclick = "Update()" type="button">Update</button>
         <fieldset>
             <label>Insert your text here to be translated: </label>
-            <input id = "SendingTo" size=50 height=80></input>
+            <input id = "word" size=50 height=80></input>
         </fieldset>
 
         <fieldset>
@@ -22,6 +22,10 @@
             <input id = "TextIn"></input>
            
         </fieldset>
+
+        <h1>
+            Results
+        </h1>
     
         
       
@@ -31,6 +35,7 @@
 
            
             function myFunction(){
+                //idea is to get the word from id=word and then spell check it with the python library then send it to the conversion to get the url 
                 
 
                 

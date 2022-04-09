@@ -35,26 +35,26 @@ class Conversion:
 
 
 
-def GetUrlforWord(self,word):
-        #a word should come in as a single word but just incase i will set up a split with spaces and choose the first index 
-        query1 = word.split(' ')[0]
-        if(len(query1)<1):
-            return "Invalid word"
-        if(self.check.known(query1)==query1):
-            if(self.dict.get(word)):
+    def GetUrlforWord(self,word):
+            #a word should come in as a single word but just incase i will set up a split with spaces and choose the first index
+            query1 = word.split(' ')[0]
+            if(len(query1)<1):
+                return "Invalid word"
+            if(self.check.known(query1)==query1):
+                if(self.dict.get(word)):
+                    #now determine if the word is in our database
+                    return self.dict[word]
+            else:
+                return "Word is not in english dictionary"
+
+
+    def GetUrlforPhrase(self,Phrase):
+        #a word should come in as a single word but just incase i will set up a split with spaces and choose the first index
+        if(len(Phrase)<1):
+            return ""#this is where we return word will be added soon
+
+        if(self.Expressions.get(Phrase.toLowerCase())):
                 #now determine if the word is in our database
-                return self.dict[word]
+            return self.Expressions[Phrase]
         else:
             return "Word is not in english dictionary"
-        
-        
-def GetUrlforPhrase(self,Phrase):
-    #a word should come in as a single word but just incase i will set up a split with spaces and choose the first index 
-    if(len(Phrase)<1):
-        return ""#this is where we return word will be added soon
-    
-    if(self.Expressions.get(Phrase.toLowerCase())):
-            #now determine if the word is in our database
-        return self.Expressions[Phrase]
-    else:
-        return "Word is not in english dictionary"        

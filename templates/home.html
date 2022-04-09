@@ -18,10 +18,16 @@
             <br></br>
             <label for="phrases">Choose a phrase:</label>
             <select name="Common phrase" id="phrase" onformchange="myFunction()">
-                <option value="How are you?">How are you?</option>
-                <option value="How is the weather?">How is the weather?</option>
-                <option value="Do you need help?">Do you need help?</option>
-                <option value="Are we there yet?">Are we there yet?</option>
+                <option value="https://media0.giphy.com/media/26FLgm33ve3iUexZC/giphy.gif?cid=790b7611f3ec61ce1016d81b6689aceace595ec079fb4258&rid=giphy.gif&ct=g">How are you?</option>
+                <option value="https://media4.giphy.com/media/26FLetDV4MHaixWHm/200w.webp">I like it</option>
+                <option value="https://media2.giphy.com/media/l4Jzdp8TJ2DDxeVna/200w.webp">I dont like this</option>
+                <option value="https://media1.giphy.com/media/3oz8xwkWxsh3gQd4EE/giphy.gif?cid=ecf05e47hb5wcfetcf4cphmmu9xpa8eab5f8w0il94pu43u4&rid=giphy.gif&ct=g">I don't know</option>
+                <option value="https://media3.giphy.com/media/l4JzaqiqnK8dnSryU/giphy.gif?cid=ecf05e47r8635sh2u1dunf6zmrk830emlspp71wq3nuct4qb&rid=giphy.gif&ct=g">When is class finished?</option>
+                <option value="https://i.pinimg.com/originals/20/be/d9/20bed9cc1a937486397e64ca2cde78ca.gif">Are you alrigh?</option>
+                <option value="https://www.indy100.com/media-library/image.gif?id=28084368&width=776&quality=80">How much does it cost?</option>
+                <option value="https://i.pinimg.com/originals/c0/32/07/c03207aa7f0a7c874a8c63a838edabe2.gif">Where is the restroom?</option>
+                <option value="https://i.gifer.com/7HLz.gif">Plese help me</option>
+                <option value="https://media4.giphy.com/media/26FL0X4d3Epuecpj2/giphy.gif?cid=ecf05e47kpj74239361piio12y30e5q5q526b9bwa38hlh1o&rid=giphy.gif&ct=g">I don't understand</option>
             </select>
         </fieldset>
 
@@ -50,7 +56,7 @@
             function myFunction(){
                 let selection = document.getElementById("phrase").value;
                 //idea is to get the word from id=word and then spell check it with the python library then send it to the conversion to get the url
-                document.getElementById("Results").src =fetch('FetchURL',{method:'POST', headers:{'Content-Type': 'application/json'},body:JSON.stringify({URL: document.getElementById("phrase").value})});
+                document.getElementById("Results").src = selection//=fetch('FetchURL',{method:'POST', headers:{'Content-Type': 'application/json'},body:JSON.stringify({URL: document.getElementById("phrase")})});
                 console.log(selection);
                 
 

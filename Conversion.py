@@ -48,13 +48,13 @@ def GetUrlforWord(self,word):
             return "Word is not in english dictionary"
         
         
-    def GetUrlforPhrase(self,Phrase):
-        #a word should come in as a single word but just incase i will set up a split with spaces and choose the first index 
-        if(len(Phrase)<1):
-            return ""#this is where we return word will be added soon
-        
-        if(self.Expressions.get(Phrase.toLowerCase())):
-                #now determine if the word is in our database
-            return self.Expressions[Phrase]
-        else:
-            return "Word is not in english dictionary"        
+def GetUrlforPhrase(self,Phrase):
+    #a word should come in as a single word but just incase i will set up a split with spaces and choose the first index 
+    if(len(Phrase)<1):
+        return ""#this is where we return word will be added soon
+    
+    if(self.Expressions.get(Phrase.toLowerCase())):
+            #now determine if the word is in our database
+        return self.Expressions[Phrase]
+    else:
+        return "Word is not in english dictionary"        

@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request
 from dotenv import load_dotenv
 import json
+from Conversion import Conversion
 
 
 
@@ -15,11 +16,12 @@ App=Flask(__name__)
 
 
 
-
-
-
+@App.route('/FetchURL',methods=['POST'])
+def url():
+    json_dict= request.get_json()
+    KeyURL= Conversion.GetUrlforPhrase(Conversion,json_dict['URL'])
+    return(KeyURL)
     
-
 
 
 
@@ -31,7 +33,7 @@ def index():
 
 
 if __name__ == "__main__":
-    
+    KeyURL = Conversion()
     App.run(port=3000)
     
 

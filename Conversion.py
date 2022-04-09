@@ -23,7 +23,7 @@ class Conversion:
         self.Expressions["i like it"]='https://media4.giphy.com/media/26FLetDV4MHaixWHm/200w.webp'
         self.Expressions["i dont like this"]='https://media2.giphy.com/media/l4Jzdp8TJ2DDxeVna/200w.webp'
 
-    def GetUrl(self,word):
+    def GetUrlforWord(self,word):
         #a word should come in as a single word but just incase i will set up a split with spaces and choose the first index 
         query1 = word.split(' ')[0]
         if(len(query1)<1):
@@ -35,3 +35,14 @@ class Conversion:
         else:
             return "Word is not in english dictionary"
         
+        
+    def GetUrlforPhrase(self,Phrase):
+        #a word should come in as a single word but just incase i will set up a split with spaces and choose the first index 
+        if(len(Phrase)<1):
+            return ""#this is where we return word will be added soon
+        
+        if(self.Expressions.get(Phrase.toLowerCase())):
+                #now determine if the word is in our database
+            return self.Expressions[Phrase]
+        else:
+            return "Word is not in english dictionary"        

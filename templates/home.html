@@ -9,33 +9,36 @@
     <body>
         
         
-        <p id="res">Insert your text here to be translated </p>
-        <button id = "Clicky" onclick = "myFunction()" type="button">Send</button>
-        <button id = "Update" onclick = "Update()" type="button">Update</button>
+        <p id="res">Select which you want translated </p>
+        <button id = "Clicky" onclick = "myFunction()" type="button">Word</button>
+        <button id = "Update" onclick = "Update()" type="button">Phase</button>
         <fieldset>
-            <label>Insert your text here to be translated: </label>       <label for="phrases">Choose a phrase:</label>
+            <label>Insert your text here to be translated: </label>      
             <input id = "word" size=50 height=80></input>
+            <br></br>
+            <label for="phrases">Choose a phrase:</label>
+            <select name="Common phrase" id="phrase" onformchange="myFunction()">
+                <option value="How are you?">How are you?</option>
+                <option value="How is the weather?">How is the weather?</option>
+                <option value="Do you need help?">Do you need help?</option>
+                <option value="Are we there yet?">Are we there yet?</option>
+            </select>
         </fieldset>
 
-        <label for="phrases">Choose a phrase:</label>
+       
 
-        <select name="Common phrase" id="phrase" onclick="myFunction()">
-            <option value="How are you?">How are you?</option>
-            <option value="How is the weather?">How is the weather?</option>
-            <option value="Do you need help?">Do you need help?</option>
-            <option value="Are we there yet?">Are we there yet?</option>
-        </select>
+        
 
 
-        <fieldset>
-            <label >Text:&emsp; </label>
-            <input id = "TextIn"></input>
-           
-        </fieldset>
+        
 
         <h1>
-
+            Results:
+            
         </h1>
+        
+        <img id = 'Results' src=''  width="250" />
+        
     
         
       
@@ -45,8 +48,10 @@
 
            
             function myFunction(){
+                let selection = document.getElementById("phrase").value;
                 //idea is to get the word from id=word and then spell check it with the python library then send it to the conversion to get the url
-                document.getElementById("TextIn").innerHTML = "We made it"
+                document.getElementById("Results").src =fetch('FetchURL',{method:'POST', headers:{'Content-Type': 'application/json'},body:JSON.stringify({URL: document.getElementById("phrase").value})});
+                console.log(selection);
                 
 
             }

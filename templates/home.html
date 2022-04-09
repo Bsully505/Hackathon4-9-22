@@ -13,9 +13,19 @@
         <button id = "Clicky" onclick = "myFunction()" type="button">Send</button>
         <button id = "Update" onclick = "Update()" type="button">Update</button>
         <fieldset>
-            <label>Insert your text here to be translated: </label>
+            <label>Insert your text here to be translated: </label>       <label for="phrases">Choose a phrase:</label>
             <input id = "word" size=50 height=80></input>
         </fieldset>
+
+        <label for="phrases">Choose a phrase:</label>
+
+        <select name="Common phrase" id="phrase" onclick="myFunction()">
+            <option value="How are you?">How are you?</option>
+            <option value="How is the weather?">How is the weather?</option>
+            <option value="Do you need help?">Do you need help?</option>
+            <option value="Are we there yet?">Are we there yet?</option>
+        </select>
+
 
         <fieldset>
             <label >Text:&emsp; </label>
@@ -24,7 +34,7 @@
         </fieldset>
 
         <h1>
-            Results
+
         </h1>
     
         
@@ -35,9 +45,8 @@
 
            
             function myFunction(){
-                //idea is to get the word from id=word and then spell check it with the python library then send it to the conversion to get the url 
-                
-
+                //idea is to get the word from id=word and then spell check it with the python library then send it to the conversion to get the url
+                document.getElementById("TextIn").innerHTML = "We made it"
                 
 
             }
